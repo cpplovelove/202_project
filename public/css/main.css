@@ -1,0 +1,36 @@
+
+body{
+    background-color: #005518;
+}
+
+.main_conent{
+    font-size: 60px;
+    margin-top: 230px;
+    text-align: center;
+    background-color: #005518;
+    color: white;
+}
+
+
+.hide_zone{
+    font-size: 30px;
+    display: none;
+    color: #ECD400;
+    text-align: center;
+}
+
+.button_login{
+    display: inline;
+}
+
+.main_conent:hover{
+    margin-top: 225px;
+}
+
+.main_conent:hover > .hide_zone{
+    display: inline;
+}
+.main_conent:hover .button_login{
+    color: yellowgreen;
+}
+

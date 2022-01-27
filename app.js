@@ -5,6 +5,10 @@ const app = Express();
 
 
 app.use('/', routes);
+// app.use(Express.static(path.join(__dirname, './public')));
+
+app.use('/css', Express.static(path.join(__dirname, './public/css')));  
+
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); 
