@@ -7,7 +7,7 @@ const app = Express();
 app.use('/', routes);
 // app.use(Express.static(path.join(__dirname, './public')));
 
-app.use('/css', Express.static(path.join(__dirname, './public/css')));  
+app.use('/', Express.static(path.join(__dirname, './public')));  
 
 
 app.set('view engine', 'ejs');
