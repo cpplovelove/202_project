@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start" : "node app.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.6",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "mysql": "^2.18.1"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,4 @@
     "url": "https://github.com/cpplovelove/202_project/issues"
   },
   "homepage": "https://github.com/cpplovelove/202_project#readme",
-  "description": ""
-}
+  "description": ""}
