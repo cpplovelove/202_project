@@ -4,5 +4,9 @@ $(function(){
     });
     
     $('#close').click(function(){$('#modal').fadeOut('slow');});
+    $('#submit').click(function(){ alert})
+
+
+
 
 })
