@@ -13,7 +13,6 @@ $( function(){
             id: $('#id').val(),
             password:$('#password').val()
         }
-
         
         $.ajax({
             type:'GET',
@@ -26,12 +25,12 @@ $( function(){
                     id:userData.userId,
                     password:userData.userPass
                 }            
+                if(user.id==inputData.id&&user.password==inputData.password){
+                    $.get('home')
+                }
+                
             }})
 
-        if(user.id==inputData.id&&user.password==inputData.password){
-            console.log('들어옴')
-            $.get('home')
-        }
 
 
     })
