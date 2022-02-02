@@ -1,8 +1,12 @@
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 const Express =require ("express");
 const routes = require('./routes');
 const path = require('path');
 const app = Express();
 
+app.use(bodyParser.json());
+app.use(cookieParser(process.env.COOKIE_SECRET, { sameSite: "none", secure: true }));
 
 app.use('/', routes);
 app.use('/', Express.static(path.join(__dirname, './public')));  

@@ -8,9 +8,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.25.0",
+    "cookie-parser": "^1.4.6",
     "ejs": "^3.1.6",
     "express": "^4.17.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "mysql2": "^2.3.3"
   },
   "repository": {
     "type": "git",
@@ -20,4 +23,5 @@
     "url": "https://github.com/cpplovelove/202_project/issues"
   },
   "homepage": "https://github.com/cpplovelove/202_project#readme",
-  "description": ""}
+  "description": ""
+}

@@ -1,21 +1,24 @@
-const mysql =require('mysql')
-const dbConnection =require('../dbconfig')
+const userService = require('../public/service/user')
 var express = require('express');
 var router = express.Router();
 
-const database = mysql.createConnection(dbConnection);
 
 router.get('/', function(req,res){
-  // res.redirect('/users')
   res.render('main')
 });
 
-router.get('/users',(req,res)=>{
-  database.query('select * from user',(error,rows)=>{
-    if(error) console.log(error)
-    console.log('\nuserInfo : ',rows)
-    res.send(rows)
-  })
+router.get('/home',function (req,res) {
+  res.render('home')
 })
+
+
+router.get('/user/:userId',async function(req,res){
+  const userId = req.params.userId;
+  userResult = await userService.findUser(userId);
+  const userData  = userResult;
+
+  res.send(userData)
+  });
+
 
 module.exports = router;
