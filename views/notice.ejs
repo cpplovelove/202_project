@@ -11,10 +11,24 @@
   </head>
   <body class="notice">  
 
+    <div id="title">notice</div>
 
-    <div id="canvas">
-      
-    </div>
-      notice
-  </body>
+    <table>
+      <tbody>
+        <%for(let i=0;i<noticeList.length;i++){ %>
+        <tr>
+          <td><%=offset+i+1%></td>
+          <td><a class="content" href="#"><%=noticeList[i].title%></a></td>
+        </tr>
+         <%}%> 
+    </tbody>
+  </table>
+
+  <ul id="index">
+    <%for(let i=page;i>0;i--){ %>
+        <li><a class="index_no" href="/notice/<%=i%>"><%=i%></a></li>
+    <%}%> 
+ </ul></div> 
+
+</body>
 </html>

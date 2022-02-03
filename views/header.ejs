@@ -11,6 +11,7 @@
         outline: 1px solid red;
         padding: 10px 20px;
       }
+      a.nav{ color: white;}
       #welcome {
         float: left;
         outline: 1px solid black;
@@ -30,10 +31,10 @@
     <meta charset="utf-8" />
   </head>
   <div id="head">
-      <span id="welcome">welcome</span>
+      <span id="welcome"><a class="nav" href='/home'>welcome</a></span>
       <ul id="nav">
-        <li><a href="/notice/">notice(개발 중)</a></li>
-        <li><a href="#">apply</a></li>
-        <li><a href="#">review</a></li>
+        <li><a class="nav" href="#">review</a></li>
+        <li><a class="nav" href="#">apply</a></li>
+        <li><a class="nav" href="/notice/">notice(개발 중)</a></li>
       </ul></div> 
 </html>
