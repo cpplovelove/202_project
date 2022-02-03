@@ -1,5 +1,5 @@
 const mysql = require("mysql2/promise");
-const dbConnection = require("../../config/dbconfig");
+const dbConnection = process.env;
 
 exports.getContent = async function() {
   //게시판 전체 게시물 조회 ( id, title, content, userId, count ) 

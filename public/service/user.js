@@ -1,5 +1,5 @@
 const mysql =require('mysql2/promise')
-const dbConnection =require('../../config/dbconfig')
+const dbConnection =process.env
 
 
     async function getUsers(){
