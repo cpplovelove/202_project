@@ -1,0 +1,32 @@
+*{background-color: #F1F1F1; }
+.home{height: 670px; position: relative;}
+
+/* 
+#star{
+    position: absolute;
+    width: 500px;
+    left: 500px;
+    overflow: hidden;
+} */
+#info {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    font-weight: 100;
+}
+
+#who {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 430px;
+
+}
+
+#mimoge {
+    position: absolute;
+    z-index: 1;
+    width: 400px;
+    left: 500px;
+    overflow: hidden;
+}
+

@@ -11,6 +11,7 @@ app.use(Express.static(path.join(__dirname, './public')));
 //routes
 app.use('/', require('./routes/index'));
 app.use('/users',require('./routes/user_controller'))
+app.use('/notice',require('./routes/notice_controller'))
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); 
