@@ -1,5 +1,6 @@
 const mysql = require("mysql2/promise");
-const dbConnection =require('../../config/dbconfig')
+// const dbConnection =require('../../config/dbconfig')
+const dbConnection =require('../../config/config');
 
 
 exports.getContent = async function() {
