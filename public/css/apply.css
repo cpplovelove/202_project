@@ -1,0 +1,31 @@
+* {
+  background-color: #005518;
+  color: color;
+}
+
+.modal_content {
+  text-align: center;
+  font-size: 22px;
+  background-color: #fefefe;
+  border: 1px solid #606060;
+  margin: 5% auto;
+  border-radius: 20px;
+  width: 50%;   
+  height: 500px;                    
+}
+
+ 
+.apply_info{
+    margin-top: 20px;
+    background-color:  #fefefe;
+
+}
+
+.reservation_list{
+  margin-top: 20px;
+  background-color:  #fefefe;
+}
+
+.apply_info > .input {
+  background-color: white;
+}

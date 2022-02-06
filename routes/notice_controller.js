@@ -1,4 +1,5 @@
 const noticeService = require('../public/service/notice');
+const userService = require('../public/service/user');
 var express = require('express');
 var router = express.Router();
 const pageLimit=5;
@@ -33,9 +34,27 @@ router.get('/:page',async function(req,res){
         offset: offset,
         limit:limit
     }
-    res.render('notice',resJson)
-
+    res.render('notice/notice',resJson)
 });
+
+router.get('/content/:id',async function (req,res) {
+    console.log(req.path,req.method)
+    //게시물을 보여줄 것
+    const contentId = req.params.id;
+    const noticeList = await noticeService.getContentById(contentId); 
+    console.log(noticeList[0].userId)
+    console.log(noticeList.userId)
+    const userResult = await userService.findUserById(noticeList[0].userId);
+
+    
+    console.log(noticeList)
+    console.log('\n\n\n특정게시글!!')
+    console.log(userResult)
+    
+    const userName = userResult.name;
+    const resJson = {noticeList, userName}
+    res.render('notice/notice_content',resJson);
+})
   
 
     module.exports = router;

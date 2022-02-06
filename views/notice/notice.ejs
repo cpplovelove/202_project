@@ -1,5 +1,5 @@
 <!-- home -->
-<%-include('header')%>
+<%-include('../common/header')%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,7 +7,7 @@
     <title>202 Project</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script> 
     <script src="/service/notice.js"></script>
-    <link rel="stylesheet" href="/css/notice.css" />
+    <link rel="stylesheet" href="../css/notice.css" />
   </head>
   <body class="notice">  
 
@@ -18,7 +18,7 @@
         <%for(let i=0;i<noticeList.length;i++){ %>
         <tr>
           <td><%=offset+i+1%></td>
-          <td><a class="content" href="#"><%=noticeList[i].title%></a></td>
+          <td><a class="content" href="/notice/content/<%=noticeList[i].id%>"><%=noticeList[i].title%></a></td>
         </tr>
          <%}%> 
     </tbody>

@@ -1,0 +1,58 @@
+<!-- apply -->
+<%-include('../common/header')%>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>202 Project</title>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/service/apply.js"></script>
+    <link rel="stylesheet" href="/css/apply.css" />
+  </head>
+  <body>
+    <form id="applyForm" action="/schedule/" method="post">
+    <div id="apply">
+      <div id="modal" class="modal">
+        <div class="modal_content">
+          <div class="apply_info">
+            <img src="/img/beMyFamily.jpeg" width="300px" /><br />
+            <label for="reservationDate" class="input">방문 예정일</label>
+            <input
+              type="date"
+              id="reservationDate"
+              name="reservationDate"
+              class="input"
+              min="2022-01-01"
+              max="2022-12-31"
+            />
+            <br />
+            이름<input
+              type="text"
+              id="name"
+              class="input"
+              placeholder="이름을 입력해주세요"
+              size="15"
+            />
+            나이<input
+              type="text"
+              id="age"
+              class="input"
+              placeholder="나이을 입력해주세요"
+              size="15"
+            />
+            <br />방문사유<br />
+            <textarea
+              placeholder="방문시 희망하는 활동이나 방문 사유를 작성해주세요."
+              id="activity"
+              class="input"
+            >
+            </textarea
+            ><br />
+            <button type="submit" id="submit" class="input">apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+  </body>
+</html>

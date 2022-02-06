@@ -13,7 +13,7 @@ router.get("/", function (req, res) {
 
 router.get("/user/:userId", async function (req, res) {
   const userId = req.params.userId;
-  userResult = await userService.findUser(userId);
+  userResult = await userService.findUserByIdString(userId);
   const userData = userResult;
 
   res.send(userData);
