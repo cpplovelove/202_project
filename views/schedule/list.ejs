@@ -15,6 +15,25 @@
         <div class="modal_content">
           <div class="reservation_list">
             예약 현황
+            
+            <!-- 
+            
+    <table>
+      <tbody>
+        <%for(let i=0;i<noticeList.length;i++){ %>
+        <tr>
+          <td><%=offset+i+1%></td>
+          <td><a class="content" href="/notice/content/<%=noticeList[i].id%>"><%=noticeList[i].title%></a></td>
+        </tr>
+         <%}%> 
+    </tbody>
+  </table>
+
+  <ul id="index">
+    <%for(let i=page;i>0;i--){ %>
+        <li><a class="index_no" href="/notice/<%=i%>"><%=i%></a></li>
+    <%}%> 
+ </ul> -->
           </div>
         </div>
       </div>

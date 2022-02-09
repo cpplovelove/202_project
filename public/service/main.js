@@ -15,23 +15,12 @@ $( function(){
         }
         
         $.ajax({
-            type:'GET',
-            url:'/user/'+inputData.id,
-            data:{},
+            type:'POST',
+            url:'/login',
+            data:inputData,
             async:false,
             success:function (data) {
-                const userData= data[0];
-                user ={
-                    id:userData.userId,
-                    password:userData.userPass
-                }            
-                if(user.id==inputData.id&&user.password==inputData.password){
-                    $.get('home')
-                }
-                
             }})
-
-
 
     })
 

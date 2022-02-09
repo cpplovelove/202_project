@@ -1,28 +1,30 @@
-const userService = require("../public/service/user");
+const userService = require("../public/service/model/user");
 var express = require("express");
 var router = express.Router();
-var isLoged = false;
 
 router.get("/", function (req, res) {
   console.log(req.path, req.method);
 
-  if (!isLoged) {
+  if (!req.cookies.isLoged) {
     res.render("main");
-  } else res.render("home");
+  } else {
+    res.render("home");
+    isLoged = false;
+  }
 });
 
-router.get("/user/:userId", async function (req, res) {
-  const userId = req.params.userId;
-  userResult = await userService.findUserByIdString(userId);
-  const userData = userResult;
-
-  res.send(userData);
-});
-
-router.get("/home", function (req, res) {
+router.post("/login", async function (req, res) {
   console.log(req.path, req.method);
-  isLoged = true;
-  res.render("home");
+  const { id, password } = req.body;
+  userResult = await userService.findUserByIdString(id);
+  const userData = userResult[0];
+
+  if (userData.userId == id && userData.userPass == password) {
+    //id password 일치
+    res.cookie("isLoged", true);
+    res.cookie("userId", id);
+    res.render("home");
+  } else res.render("main", false);
 });
 
 module.exports = router;
