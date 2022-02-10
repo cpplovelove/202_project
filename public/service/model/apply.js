@@ -22,9 +22,52 @@ async function enrollApply(req, res) {
   return rows.affectedRows;
 }
 
-async function temp() {}
+async function getContent() {
+  //예약 전체 게시물 조회 ( id, userId, isApproved, reserveDate, name, age, reason, isDel )
+  const database = await mysql.createConnection(dbConnection);
+  const query = "select * from reservation order by updateDate desc";
+
+  const [reservation] = await database.query(query);
+  const count = reservation.length;
+  let resJson = {
+    reservation,
+    count,
+  };
+  return resJson;
+}
+
+async function getContentByUserId(userId) {
+  //예약 전체 게시물 조회 ( id, userId, isApproved,isReviewed reserveDate, name, age, reason, isDel )
+  const database = await mysql.createConnection(dbConnection);
+  const query = "select * from reservation where userId="+userId+" and isApproved='Y' and isReviewed='N' order by updateDate desc";
+
+  console.log(query)
+  const [reservation] = await database.query(query);
+  const count = reservation.length;
+
+  let resJson = {
+    reservation,
+    count,
+  };
+  return resJson;
+}
+
+async function updateReservation(reseravtionId, isApproved) {
+  //예약 승인 여부 업데이트 
+  const database = await mysql.createConnection(dbConnection);
+  
+
+  const query = "update reservation set isApproved='"+isApproved+"' where id="+reseravtionId;
+  console.log(query)
+  const [rows] = await database.query(query);
+  console.log("update Log \n", rows);
+  return rows.affectedRows;
+}
+
 
 module.exports = {
   enrollApply,
-  temp,
+  getContent,
+  getContentByUserId,
+  updateReservation
 };

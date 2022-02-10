@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <title>202 Project</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <script src="/service/apply.js"></script>
+    <script src="/service/list.js"></script>
     <link rel="stylesheet" href="/css/apply.css" />
   </head>
   <body>
@@ -15,25 +15,45 @@
         <div class="modal_content">
           <div class="reservation_list">
             예약 현황
-            
-            <!-- 
-            
-    <table>
-      <tbody>
-        <%for(let i=0;i<noticeList.length;i++){ %>
-        <tr>
-          <td><%=offset+i+1%></td>
-          <td><a class="content" href="/notice/content/<%=noticeList[i].id%>"><%=noticeList[i].title%></a></td>
-        </tr>
-         <%}%> 
-    </tbody>
-  </table>
-
-  <ul id="index">
-    <%for(let i=page;i>0;i--){ %>
-        <li><a class="index_no" href="/notice/<%=i%>"><%=i%></a></li>
-    <%}%> 
- </ul> -->
+              <table id="reserve">
+                reserveList
+                <thead>
+                  <tr>
+                    <td>index</td>
+                    <td>예약일자</td>
+                    <td>이름(나이)</td>
+                    <td>방문사유</td>
+                    <td>승인여부</td>
+                  </tr>
+                </thead>
+                <tbody id="list">
+                  <%for(let i=0;i<reserveList.length;i++){ %>
+                  <tr>
+                    <td><%=offset+i+1%></td>
+                    <td><%=reserveList[i].reserveDate%></td>
+                    <td><%=reserveList[i].name%>(<%=reserveList[i].age%>)</td>
+                    <td><%=reserveList[i].reason%></td>
+                    <td>
+                      <% 
+                          var reverseApproved = ''
+                          if(reserveList[i].isApproved=='Y') reverseApproved='N'
+                          else reverseApproved='Y'
+                          %>
+                      <input type="hidden" id="reservationId" value="<%=reserveList[i].id%>">
+                      <select name="isApploved" onchange="changeIsApproved(this.value)">
+                          <option value="<%=reserveList[i].isApproved%>"><%=reserveList[i].isApproved%></option>
+                          <option value="<%=reverseApproved%>"><%=reverseApproved%></option>
+                      </select>
+                    </td>
+                  </tr>
+                  <%}%> 
+              </tbody>
+            </table>
+            <ul id="index">
+              <%for(let i=page;i>0;i--){ %>
+                  <li><a class="index_no" href="/schedule/list/<%=i%>"><%=i%></a></li>
+              <%}%> 
+          </ul>
           </div>
         </div>
       </div>

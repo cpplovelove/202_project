@@ -10,8 +10,6 @@ router.post("/", async function (req, res) {
   const { reservationDate, userName, userAge, activity } = req.body;
   req.body.userId = req.cookies.userId;
 
-  console.log(req.body);
-
   if (!reservationDate || !userName || !userAge || !activity) {
     resJson.log = "데이터 채워주세요.";
   } else {
@@ -29,9 +27,50 @@ router.get("/", async function (req, res) {
   res.render("schedule/apply");
 });
 
+
 router.get("/list", async function (req, res) {
+  res.redirect('list/1')
+});
+
+router.get("/list/:page", async function (req, res) {
   console.log("schedule" + req.method, req.path);
-  res.render("schedule/list");
+  const page = req.params.page;
+  let offset = (page-1)*5;
+  let limit = offset+5;
+
+
+  result = await applyService.getContent(req,res);
+  let { reservation, count } = result;
+  let reserveList = []
+  
+
+  if(count<limit) limit =count;
+  for (let i =offset; i<limit; i++){
+    reserveList.push(reservation[i])
+  }
+
+  const pageLimit= 5;
+  let pageNum = Math.floor(count/pageLimit)
+  if(count % pageLimit !=0 ) pageNum+=1;  
+  
+  let resJson = {
+    page: pageNum,
+    reserveList,
+    offset,
+    limit
+  }
+  res.render("schedule/list", resJson);
+});
+
+router.post('/approve',async function (req,res) {
+  console.log(req.path, req.method);
+  //   업데이트해주기
+  const {isApproved, reservationId} =req.body;
+  const result = await applyService.updateReservation(reservationId,isApproved);
+ 
+  let resJson = {} 
+  resJson.log = result + "건 업데이트 완료";
+  res.send(resJson)
 });
 
 module.exports = router;

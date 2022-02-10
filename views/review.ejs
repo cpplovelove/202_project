@@ -1,16 +1,31 @@
 <!-- review -->
-
+<%-include('common/header')%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>202 Project</title>
-    <script src="https://code.jquery.com/jquery-latest.js"></script> 
-    <!-- <link rel="stylesheet" href="/css/main.css" />
-    <script src="/service/.js"></script> -->
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="/css/apply.css" />
+    <script src="/service/.js"></script>
   </head>
-
-
   <body>
+    review
+    <div id="apply">
+      <div id="modal" class="modal">
+        <div class="modal_content">
+          <% reservation %> 
+          <% if (count==0){%> 
+            리뷰를 달 수 있는 스케줄이 없습니다
+            
+            
+          <%}else{%> 
+            
+            
+            
+          <%}%>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

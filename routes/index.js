@@ -22,7 +22,7 @@ router.post("/login", async function (req, res) {
   if (userData.userId == id && userData.userPass == password) {
     //id password 일치
     res.cookie("isLoged", true);
-    res.cookie("userId", id);
+    res.cookie("userId", userData.id);
     res.render("home");
   } else res.render("main", false);
 });

@@ -10,20 +10,29 @@
   border: 1px solid #606060;
   margin: 5% auto;
   border-radius: 20px;
-  width: 50%;   
-  height: 500px;                    
+  width: 50%;
+  height: 500px;
 }
 
- 
-.apply_info{
-    margin-top: 20px;
-    background-color:  #fefefe;
-
+#reserve {
+  text-align: center;
+  font-size: 14px;
+  color: black;
+  background-color: pink;
+  border: 1px solid #606060;
+  margin: 5% auto;
+  border-radius: 20px;
+  width: 80%;
 }
 
-.reservation_list{
+.apply_info {
   margin-top: 20px;
-  background-color:  #fefefe;
+  background-color: #fefefe;
+}
+
+.reservation_list {
+  margin-top: 20px;
+  background-color: #fefefe;
 }
 
 .apply_info > .input {
