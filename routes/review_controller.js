@@ -43,9 +43,10 @@ router.post("/", async function (req, res) {
     resJson.log = "데이터 채워주세요.";
   } else {
     //제대로 데이터가 들어왔을 경우
-    result = await reviewService.enrollReview(req, res);
+    result = await reviewService.enrollReview(req, res); 
+    applyService.updateIsReviewed(reservationId); 
     resJson.status = true;
-    resJson.log = result + "건 리뷰 작성 완료";
+    resJson.log = "리뷰 작성 감사합니다! 발전하는 202호가 되겠습니다.";
   }
 
   res.send(resJson);

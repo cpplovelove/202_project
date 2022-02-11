@@ -63,9 +63,20 @@ async function updateReservation(reseravtionId, isApproved) {
 }
 
 
+async function updateIsReviewed(reseravtionId) {
+  //예약 승인 여부 업데이트 
+  const database = await mysql.createConnection(dbConnection);
+  
+  const query = "update reservation set isReviewed='Y' where id="+reseravtionId;
+  const [rows] = await database.query(query);
+  console.log("update Log \n", rows);
+  return rows.affectedRows;
+}
+
 module.exports = {
   enrollApply,
   getContent,
   getContentByUserId,
-  updateReservation
+  updateReservation,
+  updateIsReviewed
 };
