@@ -6,8 +6,12 @@
     <meta charset="utf-8" />
     <title>202 Project</title>
     <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/service/review.js"></script>
     <link rel="stylesheet" href="/css/apply.css" />
-    <script src="/service/.js"></script>
+    <script>
+      const drawStar = (target) => {
+      document.querySelector(`.star span`).style.width = `${target.value * 10}%`;}
+    </script>
   </head>
   <body>
     review
@@ -19,10 +23,40 @@
             리뷰를 달 수 있는 스케줄이 없습니다
             
             
-          <%}else{%> 
-            
-            
-            
+            <%}else{%> 
+            <form id="review">
+              <table>
+                <tr><td><label for="reservationId">현재 작성가능한 리뷰</label></td></tr>
+                <tr><td>              
+                  <select name="reservationId">
+                  <%for (i=0;i<count;i++){%>
+                  <option value="<%=reservation[i].id%>"><%=reservation[i].reserveDate%>자 예약건</option>
+                  <%}%>
+                  </select>
+                </td></tr>  
+                <tr><td>              
+                  <textarea id="comment" name="comment" placeholder="방문 소감을 남겨주세요."></textarea>
+                </td></tr>
+                <tr><td>             
+                  <select name="revisit">
+                    <option value="Y">재방문 원합니다.</option>
+                    <option value="N">202호 불매합니다.</option>
+                  </select>
+                </td></tr>
+                <tr><td>        
+                 <textarea id="activity" name="activity" placeholder="재방문시 원하는 활동이나 방문해보고 싶은 장소를 알려주세요. 
+                  202호의 발전에 기여할 수 있습니다!"></textarea>
+                </td></tr>
+                  <tr><td>              
+                    <span class="star">
+                    ★★★★★
+                    <span>★★★★★</span>
+                    <input id="score" type="range" oninput="drawStar(this)" value="1" step="1" min="0" max="10">
+                    </span>
+                </td></tr>
+                </table>
+                <button type="submit" id="submit">제출</button>
+            </form> 
           <%}%>
         </div>
       </div>

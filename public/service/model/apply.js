@@ -41,7 +41,6 @@ async function getContentByUserId(userId) {
   const database = await mysql.createConnection(dbConnection);
   const query = "select * from reservation where userId="+userId+" and isApproved='Y' and isReviewed='N' order by updateDate desc";
 
-  console.log(query)
   const [reservation] = await database.query(query);
   const count = reservation.length;
 
@@ -58,7 +57,6 @@ async function updateReservation(reseravtionId, isApproved) {
   
 
   const query = "update reservation set isApproved='"+isApproved+"' where id="+reseravtionId;
-  console.log(query)
   const [rows] = await database.query(query);
   console.log("update Log \n", rows);
   return rows.affectedRows;
