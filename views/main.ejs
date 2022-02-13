@@ -1,41 +1,77 @@
-<!-- main -->
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
     <title>202 Project</title>
-    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link rel="stylesheet" href="/css/main.css" />
     <script src="/service/main.js"></script>
   </head>
 
-
   <body>
     <div id="modal" class="modal">
-        <div class="modal_content">
-          <form id="loginForm">
-            
-            <h2>login</h2><br><br>
-            <table>
-              <tr>
-                <td>id</td><td><input type="name" id="id" class="input_login"></td>
-              </tr>
-              <tr>
-                <td>password</td><td><input type="password" id="password" class="input_login"></td>
-              </tr>
-            </table>
-            <button id="close">sign in(개발 중)</button>
-            <button id="submit">submit</button>
-          </form>
-           
-        </div>
+      <div class="modal_content">
+        <div id="close">x</div>
+        <form id="loginForm">
+          <h2>login</h2>
+          <br />
+          <table>
+            <tr>
+              <td><label class="input_login" >id</label></td>
+              <td><input type="name" name="id" class="input_login" placeholder="id를 입력해주세요"/></td>
+            </tr>
+            <tr>
+              <td><label class="input_login">password</label> </td>
+              <td>
+                <input type="password" name="password" class="input_login" placeholder="password를 입력해주세요" />
+              </td>
+            </tr>
+          </table>
+          <div class="container"> 
+          </div>
+          <button id="loginSubmit" class="submit_button">확인</button>
+        </form>
+
+        <form id="signForm">
+          <h2>sign in</h2>
+          <table>
+            <tr>
+              <td><label class="input_login" >name</label></td>
+              <td><input type="name" name="name" class="input_login" placeholder="이름/닉네임을 입력해주세요"/></td>
+            </tr>
+            <tr>
+              <td><label class="input_login" >id</label></td>
+              <td><input type="name" name="id" class="input_login" placeholder="id를 입력해주세요"/></td>
+            </tr>
+            <tr>
+              <td><label class="input_login" >password</label></td>
+              <td>
+                <input type="password" name="password" class="input_login" placeholder="password를 입력해주세요"/>
+              </td>
+            </tr>
+            <tr>
+              <td>checkPassword</td>
+              <td>
+                <input
+                  type="password"
+                  name="checkPassword"
+                  class="input_login"
+                  placeholder="비밀번호를 확인해주세요!"
+                />
+              </td>
+            </tr>
+          </table>
+          <button type="submit" id="signinSubmit" class="submit_button">확인</button>
+        </form>
+        <button id="signin" class='button'>sign in</button>
+        <button id="login" class='button'>submit</button>
+      </div>
     </div>
 
-
-
     <div class="main_conent">
-      <div class="hide_zone">welcome! click me</div><br>
+      <div class="hide_zone">welcome! click me</div>
+      <br />
       <div class="button_login">No. 202</div>
       Project <br />:SY's houseComing Project
     </div>

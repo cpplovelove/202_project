@@ -33,8 +33,23 @@ async function findUserById(id) {
 
   return rows;
 }
+
+async function enrollUser(req, res) {
+  //예약 등록
+  const database = await mysql.createConnection(dbConnection);
+  const { id,name,password } = req.body;
+
+  const [rows] = await database.query(
+    "insert into user(userId, userPass, name) values(?,?,?)",
+    [id,password,name]
+  );
+  console.log("insert Log \n", rows);
+  return rows.affectedRows;
+}
+
 module.exports = {
   findUserByIdString,
   findUserById,
   getUsers,
+  enrollUser
 };
