@@ -5,20 +5,19 @@
   <head>
     <meta charset="utf-8" />
     <title>202 Project</title>
-    <script src="https://code.jquery.com/jquery-latest.js"></script> 
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="/service/notice.js"></script>
     <link rel="stylesheet" href="/css/notice.css" />
   </head>
-  <body class="notice_content">  
-
+  <body>
     <div class="content">
-        <div id="content_title"><%=noticeList[0].title%></div>
-        <div class="content_info">
-            <p><%=userName%>&nbsp;  <%=noticeList[0].createDate%></p>
-        </div>
-        <div id="content"><%=noticeList[0].content%></div>
+      <a href="javascript:window.history.back()"
+       id="back"> < </a>
+      <div id="content_title"><%=noticeList[0].title%></div>
+      <div class="content_info">
+        <p><%=userName%>&nbsp; <%=noticeList[0].createDate%></p>
+      </div>
+      <div id="content"><%=noticeList[0].content%></div>
     </div>
-    <h2 id="back"><a href="javascript:window.history.back()">뒤로</a></h2>
-
-</body>
+  </body>
 </html>
