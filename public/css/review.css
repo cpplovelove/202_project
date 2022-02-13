@@ -15,7 +15,7 @@ body {
   padding: 50px;
 }
 
-.title{
+.title {
   font-weight: 100;
   font-size: 40px;
 }
@@ -29,18 +29,17 @@ body {
   width: 80%;
 }
 
-th{
+th {
   padding: 10px;
   text-align: center;
 }
-
 
 .reservation_list {
   margin-top: 10px;
   background-color: #fefefe;
 }
 
-#index{
+#index {
   width: 90%;
   padding: 20px;
   margin: 0 auto;
@@ -53,7 +52,7 @@ th{
   font-weight: 200;
   color: black;
 }
-.index_no:hover{
+.index_no:hover {
   font-weight: 700;
 }
 
@@ -78,35 +77,31 @@ th{
 
 .star span {
   width: 0;
-  position: absolute; 
+  position: absolute;
   left: 0;
   color: yellow;
   overflow: hidden;
   pointer-events: none;
 }
 
-
-
-
-input{
+input {
   border-radius: 15px;
   border: 1px solid white;
   color: #606060;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   margin: 3px 5px;
   width: 150px;
   height: 30px;
 }
 
-td{
+td {
   font-size: 15px;
-  
 }
 
 .button {
   border-radius: 5px;
   border: 0px;
-  background-color: #9BC6A7;
+  background-color: #9bc6a7;
   color: black;
   font-size: 15px;
   margin: 1px 3px;
@@ -114,21 +109,40 @@ td{
   height: 35px;
 }
 
-.button:hover{
-
-  background-color:#005518;
-  color:white;
+.button:hover {
+  background-color: #005518;
+  color: white;
 }
 
-table{
+table {
   margin: 10px auto;
   text-align: left;
-  
 }
 
+#activity {
+  width: 100%;
+  border: 0px;
+}
 
-#activity{
+#comment {
     width: 100%;
     border: 0px;
+  }
+  
+
+td {
+  width: 50%;
+}
+select {
+  background-color: #c4c4c4;
+  border-radius: 5px;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  border: 0px;
 }
 
+
+#review{
+    margin-top: 50px;
+}

@@ -13,17 +13,16 @@
     <div id="apply">
       <div id="modal" class="modal">
         <div class="modal_content">
+          <span class="title">Reservation Status</span>
           <div class="reservation_list">
-            예약 현황
-              <table id="reserve">
-                reserveList
+            <table id="reserve">
                 <thead>
-                  <tr>
-                    <td>index</td>
-                    <td>예약일자</td>
-                    <td>이름(나이)</td>
-                    <td>방문사유</td>
-                    <td>승인여부</td>
+                  <tr id="thead">
+                    <th>index</th>
+                    <th>예약일자</th>
+                    <th>이름(나이)</th>
+                    <th>방문사유</th>
+                    <th>승인여부</th>
                   </tr>
                 </thead>
                 <tbody id="list">
@@ -50,7 +49,7 @@
               </tbody>
             </table>
             <ul id="index">
-              <%for(let i=page;i>0;i--){ %>
+              <%for(let i=1;i<=page;i++){ %>
                   <li><a class="index_no" href="/schedule/list/<%=i%>"><%=i%></a></li>
               <%}%> 
           </ul>
