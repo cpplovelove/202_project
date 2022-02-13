@@ -6,6 +6,7 @@ $(function () {
   $("#close").click(function () {
     $("#modal").fadeOut("slow");
   });
+  
   $("#login").click(async function () {
     //login 전환
     document.getElementById('signForm').style.display='none';

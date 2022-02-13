@@ -5,13 +5,34 @@
   <head>
     <meta charset="utf-8" />
     <title>202 Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <script src="/service/home.js"></script>
     <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
     <div class="home">
       <div id="info">who visited in January?</div>
-      <img src="/img/Frame 1.png" id="mimoge" />
-      <div id="who">jison(18, sister) _ 개발중, 데이터로 대체할 것</div>
+      <div id="mimoge"><img src="/img/Frame 1.png" /></div>
+      <div id="who">chamssay(23)<br></div>
+
+
+        <div id="modal" class="modal">
+          <div class="modal_content">
+            <div id="close">x</div>
+
+            <form id="commentForm">
+            <div class="content">
+              hi! 이부분은 개발 중으로, 미모지를 클릭했을 시 이 사람이 방문 시 남겼던 리뷰를 보여주려합니다.<br>
+              이 메인 페이지에 들어갈 내용에 대한 의견을 남겨주시면 개발에 좋은 참조가 될 거에요!<br>
+              아래 코멘트를 이용해주세요!
+              <textarea name="comment" class="comment" id="comment_area" placeholder="메인에 들어갔으면 좋을 내용을 보내주세요!"></textarea>
+              <button id="comment_submit" class='button' type="submit">comment</button>
+            </div>
+          </form>
+          </div>
+        </div>
+    
     </div>
   </body>
 </html>
